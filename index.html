@@ -1059,6 +1059,25 @@
     }
   });
 </script>
+<script>
+(function () {
+  function track(name, params) {
+    if (typeof gtag === "function") gtag("event", name, params);
+  }
 
+  const marks = [25, 50, 75, 90];
+  const fired = {};
+  window.addEventListener("scroll", function () {
+    const h = document.documentElement;
+    const pct = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
+    marks.forEach(function (m) {
+      if (!fired[m] && pct >= m) {
+        fired[m] = true;
+        track("scroll_depth", { percent_scrolled: m });
+      }
+    });
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
