@@ -1041,6 +1041,9 @@
           if (response.ok) {
             leadForm.reset();
             successMsg.style.display = 'block';
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', { location: 'insurance_landing' });
+            }
           } else {
             return response.json().then(function (data) {
               var msg = (data && data.errors && data.errors.map(function (er) { return er.message; }).join(', '))
