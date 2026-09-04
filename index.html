@@ -30,6 +30,14 @@
   아래 --font-ohneuleun 값에 넣어주세요. 지금은 가장 흔한 슬러그로 임시 지정해뒀습니다.
 -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQDWNDWHG0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QQDWNDWHG0');
+</script>
+
 <style>
   :root{
     --font-ohneuleun:'ohneuleun', '210-ohneuleun', '210 Ohneuleun', 'Noto Serif KR', serif;
@@ -390,6 +398,7 @@
     padding:1px;
     background:var(--gold-grad);
     -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite:xor;
     mask-composite:exclude;
     pointer-events:none;
@@ -731,13 +740,14 @@
     .mobile-break{ display:inline; }
 
     .hero-inner{ padding:80px 24px 300px 24px; text-align:center; }
-    .hero-eyebrow{ font-size:34px; }
+    .hero-eyebrow{ font-size:45px; }
     .hero-eyebrow-wrap{ font-size:34px; margin-bottom:12px; }
-    .hero-sub{ font-size:30px; margin-bottom:4px; }
-    .hero-main{ font-size:38px; margin-bottom:22px; }
+    .hero-eyebrow grad-text{font-size: 40px;}
+    .hero-sub{ font-size:26px; margin-bottom:4px; }
+    .hero-main{ font-size: 30px; margin-bottom:22px; }
     .hero-badge{ padding:16px 28px; }
     .hero-badge span{ font-size:16px; }
-    .hero-man{ width:82%; }
+    .hero-man{ width:90%; }
     .hero-cta-row{
       justify-content:center;
       position:absolute;
@@ -786,6 +796,7 @@
       flex-wrap:wrap;
       justify-content:center;
       padding:16px 0 0;
+      max-width: 290px;
     }
     .proof-card{ width:145px; margin:-8px -4px; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,0.45); }
     .proof-card.c1{ transform:rotate(-6deg) translateY(6px); z-index:1; }
