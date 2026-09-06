@@ -171,7 +171,16 @@
     font-size:92px;
     letter-spacing:-0.05em;
     line-height:1.2;
-    margin-bottom:44px;
+    margin-bottom:18px;
+  }
+
+  .hero-support-copy{
+    margin:0 0 26px;
+    font-size:22px;
+    line-height:1.6;
+    letter-spacing:-0.02em;
+    color:rgba(245, 241, 234, 0.82);
+    font-weight:500;
   }
 
   .hero-cta-row{
@@ -355,7 +364,7 @@
     background-repeat:no-repeat, no-repeat;
     background-position:center center, center center;
     background-size:cover, cover;
-    padding:140px 0;
+    padding:170px 0;
     overflow:hidden;
   }
 
@@ -380,55 +389,59 @@
     position:relative;
     max-width:1240px;
     margin:0 auto;
-    border-radius:24px;
-    background:rgba(24,20,15,0.4);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    padding:56px 40px;
+    border-radius:0;
+    background:transparent;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    padding:0;
     display:flex;
-    align-items:center;
+    align-items:stretch;
     justify-content:space-between;
-    gap:8px;
+    gap:16px;
+    border:none;
   }
 
   .solution-box::before{
     content:"";
-    position:absolute;
-    inset:0;
-    border-radius:inherit;
-    padding:1px;
-    background:var(--gold-grad);
-    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    pointer-events:none;
+    display:none;
   }
 
   .step{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:20px;
+    justify-content:center;
+    gap:18px;
     flex:1 1 0;
+    min-height:280px;
+    padding:22px 18px;
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:inset 0 0 0 1px rgba(255,209,120,0.04);
+    position:relative;
   }
 
   .step-icon{
-    width:170px;
-    height:170px;
+    width:120px;
+    height:120px;
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:transform .3s ease;
+    padding:16px;
+    border-radius:22px;
+    background:linear-gradient(135deg, rgba(255,197,85,0.16), rgba(255,197,85,0.04));
+    border:1px solid rgba(255,202,101,0.28);
+    transition:transform .3s ease, border-color .3s ease;
   }
 
-  .step:hover .step-icon{ transform:translateY(-10px) scale(1.08); }
+  .step:hover .step-icon{ transform:translateY(-8px) scale(1.04); border-color:rgba(255,202,101,0.5); }
 
   .step-icon img{ max-width:100%; max-height:100%; object-fit:contain; }
 
   .step-caption{
     text-align:center;
-    font-size:22px;
+    font-size:20px;
     font-weight:500;
     letter-spacing:-0.02em;
     color:#f1efe9;
@@ -439,16 +452,18 @@
 
   .chevron{
     flex:0 0 auto;
-    font-size:28px;
+    align-self:center;
+    font-size:30px;
     font-weight:700;
     color:var(--gold-2);
-    padding:0 6px;
+    padding:0 4px;
+    opacity:0.9;
   }
 
   /* ===================== SECTION 4: META ===================== */
   .meta{
     background:var(--section-black);
-    padding:140px 0;
+    padding:170px 0;
   }
 
   .meta-grid{
@@ -488,14 +503,155 @@
 
   .meta-right img:hover{ transform:translateY(-10px) scale(1.05); }
 
+  /* ===================== SECTION 4.5: BENEFIT 1 ===================== */
+  .benefit-one{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(5,5,5,0.96) 0%, rgba(0,0,0,0.96) 100%),
+      #050505;
+    padding:150px 0 70px;
+    overflow:hidden;
+  }
+
+  .benefit-one::before{
+    content:"";
+    position:absolute;
+    inset:-8% 0 0 0;
+    background:
+      linear-gradient(120deg,
+        rgba(255,174,26,0.14) 0%,
+        rgba(255,174,26,0.04) 18%,
+        rgba(255,174,26,0.0) 35%,
+        rgba(255,174,26,0.0) 65%,
+        rgba(255,174,26,0.08) 82%,
+        rgba(255,174,26,0.14) 100%),
+      radial-gradient(circle at 50% 50%, rgba(255,192,85,0.22), transparent 28%),
+      linear-gradient(135deg, transparent 0%, rgba(255,177,41,0.12) 28%, rgba(255,177,41,0.0) 52%, rgba(255,177,41,0.12) 74%, transparent 100%);
+    opacity:1;
+    pointer-events:none;
+  }
+
+  .benefit-one::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(135deg,
+        rgba(255,181,50,0.18) 0%,
+        rgba(255,181,50,0) 15%,
+        rgba(255,181,50,0) 35%,
+        rgba(255,181,50,0.18) 48%,
+        rgba(255,181,50,0) 62%,
+        rgba(255,181,50,0) 85%,
+        rgba(255,181,50,0.18) 100%);
+    mix-blend-mode:screen;
+    opacity:0.8;
+    pointer-events:none;
+  }
+
+  .benefit-one-inner{
+    max-width:1300px;
+    margin:0 auto;
+    padding:0 60px;
+  }
+
+  .benefit-one-header{
+    text-align:center;
+    margin-bottom:34px;
+  }
+
+  .benefit-one-badge{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid rgba(238,206,146,0.4);
+    background:rgba(238,206,146,0.08);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    color:#f5d79d;
+    text-transform:uppercase;
+  }
+
+  .benefit-one-title{
+    font-size:70px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    line-height:1.2;
+    color:#fff;
+    margin-bottom:18px;
+  }
+
+  .benefit-one-desc{
+    max-width:980px;
+    margin:0 auto;
+    font-size:22px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .benefit-one-desc strong{
+    color:#f3f0ea;
+    font-weight:700;
+  }
+
+  .ad-marquee-wrap{
+    position:relative;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    margin-top:44px;
+    overflow:hidden;
+    border-radius:0;
+    border:none;
+    background:transparent;
+    box-shadow:none;
+    padding:10px 0 18px;
+  }
+
+  .ad-marquee-track{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    width:max-content;
+    padding:18px 0;
+    transform:translateX(-2%);
+    animation:ad-marquee 24s linear infinite;
+  }
+
+  .ad-marquee-item{
+    flex:0 0 auto;
+    width:280px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 38px rgba(0,0,0,0.38);
+    border:1px solid rgba(255,255,255,0.08);
+    background:#12100f;
+  }
+
+  .ad-marquee-item img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  @keyframes ad-marquee {
+    0% { transform:translateX(-2%); }
+    100% { transform:translateX(calc(-50% - 10px)); }
+  }
+
   /* ===================== SECTION 5: SOCIAL PROOF ===================== */
   .social{
     position:relative;
-    background:
-      url('./assets/online-sales-bg.png') no-repeat bottom center,
-      #000;
-    background-size:cover;
-    padding:140px 0 160px;
+    background-color:#000;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.22)),
+      url('./assets/online-sales-bg.png');
+    background-position:center center, center center;
+    background-repeat:no-repeat, no-repeat;
+    background-size:cover, cover;
+    background-blend-mode:normal, screen;
+    padding:220px 0 220px;
   }
 
   .social-title{
@@ -505,14 +661,14 @@
     letter-spacing:-0.03em;
     line-height:1.2;
     color:#fff;
-    margin-bottom:20px;
+    margin:0 0 28px;
   }
 
   .social-desc{
     text-align:center;
     font-size:22px;
     color:var(--muted);
-    margin-bottom:40px;
+    margin:0 0 60px;
   }
 
   .proof-collage{
@@ -521,7 +677,7 @@
     align-items:center;
     max-width:1300px;
     margin:0 auto;
-    padding:20px 0 10px;
+    padding:28px 0 20px;
   }
 
   .proof-card{
@@ -545,11 +701,787 @@
   .proof-card.c3:hover{ transform:rotate(4deg) translateY(-34px); }
   .proof-card.c4:hover{ transform:rotate(10deg) translateY(-4px); }
 
-  /* ===================== FOOTER ===================== */
-  .footer{
-    background:#050403;
+  .final-cta{
+    position:relative;
+    background-color:#000;
+    background-image:
+      linear-gradient(rgba(10,8,6,0.12), rgba(10,8,6,0.28)),
+      url('./assets/hero-bg.png');
+    background-position:center center, center center;
+    background-repeat:no-repeat, no-repeat;
+    background-size:cover, cover;
+    background-blend-mode:normal, screen;
+    padding:220px 0 180px;
+    overflow:hidden;
+  }
+
+  .final-cta-inner{
+    position:relative;
+    z-index:1;
+    max-width:1300px;
+    margin:0 auto;
+    padding:0 60px;
+    text-align:center;
+  }
+
+  .final-cta-title{
+    margin:0 0 18px;
+    font-size:clamp(42px, 5vw, 90px);
+    line-height:1.12;
+    letter-spacing:-0.05em;
+    font-weight:800;
+    color:#fff;
+  }
+
+  .final-cta-sub{
+    margin:0 0 32px;
+    font-size:clamp(18px, 1.8vw, 26px);
+    line-height:1.6;
+    color:rgba(245, 241, 234, 0.82);
+  }
+
+  .final-cta-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 28px;
+    border-radius:999px;
+    border:1px solid transparent;
+    background:
+      linear-gradient(#050403, #050403) padding-box,
+      var(--cream-grad) border-box;
+    text-decoration:none;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:-0.03em;
+  }
+
+  .cta-arrow {
+    position:relative;
+    display:inline-block;
+    width:0;
+    height:0;
+    margin-top:8px;
+    border-left:12px solid transparent;
+    border-right:12px solid transparent;
+    border-top:18px solid rgba(245, 215, 157, 0.95);
+    filter:drop-shadow(0 0 12px rgba(245, 215, 157, 0.35));
+    animation:ctaArrowPulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes ctaArrowPulse {
+    0%, 100% { transform:translateY(0); opacity:1; }
+    50% { transform:translateY(8px); opacity:0.7; }
+  }
+
+  /* ===================== SECTION 5.5: LAUNCH PACKAGE ===================== */
+  .launch-package{
+    position:relative;
+    background-color:#000;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('./assets/meta-section-bg.png');
+    background-repeat:no-repeat, no-repeat;
+    background-position:center center, center center;
+    background-size:cover, cover;
+    padding:140px 0 120px;
+    overflow:hidden;
+  }
+
+  .launch-package-inner{
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 60px;
+  }
+
+  .launch-package-head{
+    text-align:center;
+    margin-bottom:44px;
+  }
+
+  .launch-package-badge{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid rgba(238,206,146,0.4);
+    background:rgba(238,206,146,0.08);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    color:#f5d79d;
+    text-transform:uppercase;
+  }
+
+  .launch-package-title{
+    margin:0 0 18px;
+    font-size:clamp(38px, 4vw, 70px);
+    line-height:1.12;
+    letter-spacing:-0.04em;
+    font-weight:800;
+    color:#fff;
+  }
+
+  .launch-package-title .grad-text{
+    display:inline-block;
+  }
+
+  .launch-package-sub{
+    max-width:980px;
+    margin:0 auto;
+    font-size:clamp(18px, 1.6vw, 24px);
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .launch-package-grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:22px;
+    margin-top:28px;
+  }
+
+  .launch-feature-card{
+    position:relative;
+    padding:26px 22px 24px;
+    border-radius:22px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:inset 0 0 0 1px rgba(255,209,120,0.04);
+    min-height:220px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .launch-feature-card::before{
+    content:"";
+    position:absolute;
+    top:12px;
+    left:50%;
+    width:90px;
+    height:2px;
+    transform:translateX(-50%);
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(255,197,85,0), rgba(255,197,85,0.92), rgba(255,197,85,0));
+    box-shadow:0 0 12px rgba(255,197,85,0.18);
+  }
+
+  .launch-feature-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    margin:18px auto 18px;
+    border-radius:14px;
+    background:linear-gradient(135deg, rgba(255,197,85,0.18), rgba(255,197,85,0.05));
+    border:1px solid rgba(255,202,101,0.28);
+    color:#f4d28d;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.04);
+    position:relative;
+    z-index:1;
+  }
+
+  .launch-feature-card h4{
+    margin:0 0 12px;
+    font-size:clamp(22px, 1.8vw, 28px);
+    line-height:1.3;
+    letter-spacing:-0.03em;
+    color:#fff;
+  }
+
+  .launch-feature-card p{
+    margin:0;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--muted);
+  }
+
+  .launch-package-cta{
+    margin-top:34px;
+    padding:22px 26px;
+    border-radius:18px;
+    text-align:center;
+    background:linear-gradient(135deg, rgba(255,194,82,0.09), rgba(255,255,255,0.02));
+    border:1px solid rgba(255,202,101,0.3);
+    box-shadow:0 18px 42px rgba(0,0,0,0.25);
+  }
+
+  .launch-package-cta span{
+    font-size:clamp(16px, 1.4vw, 22px);
+    color:#f4efe7;
+    line-height:1.6;
+    letter-spacing:-0.02em;
+  }
+
+  /* ===================== SECTION 5.5: BENEFIT 2 ===================== */
+  .benefit-two{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(8,7,6,0.98) 0%, rgba(7,6,5,1) 100%);
+    padding:120px 0 140px;
+    overflow:hidden;
+  }
+
+  .benefit-two-inner{
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 60px;
+  }
+
+  .benefit-two-head{
+    text-align:center;
+    margin-bottom:50px;
+  }
+
+  .benefit-two-badge{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid rgba(238,206,146,0.4);
+    background:rgba(238,206,146,0.08);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    color:#f5d79d;
+    text-transform:uppercase;
+  }
+
+  .benefit-two-title{
+    font-size:70px;
+    line-height:1.2;
+    letter-spacing:-0.04em;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:18px;
+  }
+
+  .benefit-two-desc{
+    font-size:22px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .benefit-two-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:0;
+    margin:18px auto 0;
+    max-width:1500px;
+    width:100%;
+  }
+
+  .benefit-two-panel{
+    flex:0 0 50%;
+    width:50%;
+    min-height:640px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .benefit-two-panel--main{
+    justify-content:center;
+  }
+
+  .benefit-two-panel--sub{
+    justify-content:center;
+  }
+
+  .phone-demo{
+    position:relative;
+    width:100%;
+    max-width:360px;
+    height:650px;
+    justify-self:center;
+    margin-left:0;
+    border-radius:34px;
+    background:linear-gradient(180deg, #0d0d0d 0%, #1a170f 100%);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 28px 70px rgba(0,0,0,0.5);
+    padding:18px 14px 20px;
+    animation:phoneFloat 4s ease-in-out infinite;
+    cursor:pointer;
+    user-select:none;
+  }
+
+  @keyframes phoneFloat {
+    0%, 100% { transform:translateY(0); }
+    50% { transform:translateY(-8px); }
+  }
+
+  .phone-demo::before{
+    content:"";
+    position:absolute;
+    inset:12px 14px auto 14px;
+    height:18px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.08);
+    width:52%;
+    margin:0 auto;
+  }
+
+  .phone-screen{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:
+      linear-gradient(180deg, rgba(18,14,10,0.96), rgba(12,10,9,0.98));
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.05);
+  }
+
+  .mail-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 18px 16px;
+    background:rgba(255,255,255,0.02);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:12px;
+    color:#d7d1c6;
+  }
+
+  .mail-dot-group{
+    display:flex;
+    gap:6px;
+  }
+
+  .mail-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.16);
+  }
+
+  .mail-body{
+    position:relative;
+    padding:18px 16px 0;
+  }
+
+  .mail-alert-wrap{
+    position:relative;
+    height:78px;
+    margin-bottom:18px;
+  }
+
+  .mail-alert{
+    position:absolute;
+    left:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 14px;
+    border-radius:14px;
+    background:rgba(255,194,77,0.08);
+    border:1px solid rgba(255,188,74,0.2);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02);
+    opacity:0;
+    transform:translateY(16px) scale(0.96);
+    animation:alertIn 1.6s ease-out 0.2s forwards;
+    border:none;
+    color:inherit;
+    font:inherit;
+    text-align:left;
+    cursor:pointer;
+  }
+
+  @keyframes alertIn {
+    0% { opacity:0; transform:translateY(16px) scale(0.96); }
+    35% { opacity:1; transform:translateY(0) scale(1.03); }
+    100% { opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  @keyframes alertOut {
+    0% { opacity:1; transform:translateY(0) scale(1); }
+    100% { opacity:0; transform:translateY(-12px) scale(0.97); }
+  }
+
+  .phone-demo .mail-alert,
+  .phone-demo .report-card {
+    will-change: opacity, transform;
+  }
+
+  .mail-bell{
+    width:34px;
+    height:34px;
+    border-radius:12px;
+    background:linear-gradient(135deg, #f8d88c 0%, #d9972a 100%);
+    position:relative;
+    box-shadow:0 10px 22px rgba(213,143,34,0.3);
+  }
+
+  .mail-bell::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:8px;
+    width:12px;
+    height:14px;
+    transform:translateX(-50%);
+    border-radius:7px 7px 9px 9px;
+    background:#fff1c8;
+  }
+
+  .mail-bell::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:7px;
+    width:16px;
+    height:5px;
+    transform:translateX(-50%);
+    border-radius:999px;
+    background:#fff1c8;
+  }
+
+  .mail-text strong{
+    display:block;
+    color:#f5e7c8;
+    font-size:14px;
+    margin-bottom:3px;
+  }
+
+  .mail-text span{
+    display:block;
+    color:#b9b2a7;
+    font-size:11px;
+  }
+
+  .report-card{
+    position:absolute;
+    left:50%;
+    bottom:24px;
+    transform:translateX(-50%) translateY(24px) scale(0.96);
+    width:calc(100% - 28px);
+    background:linear-gradient(180deg, rgba(31,25,18,0.95), rgba(18,15,11,0.98));
+    border:1px solid rgba(255,208,124,0.22);
+    border-radius:20px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.5);
+    overflow:hidden;
+    opacity:0;
+    pointer-events:none;
+  }
+
+  .phone-demo.is-open .mail-alert{
+    animation:alertOut 0.38s ease forwards;
+  }
+
+  .phone-demo.is-open .report-card{
+    opacity:1;
+    pointer-events:auto;
+    animation:reportOpen 0.9s cubic-bezier(.18,.89,.32,1.28) 0.15s forwards;
+  }
+
+  @keyframes reportOpen {
+    0% { opacity:0; transform:translateX(-50%) translateY(32px) scale(0.94); }
+    55% { opacity:1; transform:translateX(-50%) translateY(-3px) scale(1.02); }
+    100% { opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
+  }
+
+  .report-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 18px 12px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+
+  .report-label{
+    font-size:12px;
+    color:#dfc18a;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+
+  .report-score{
+    font-size:14px;
+    font-weight:700;
+    color:#f4d08a;
+  }
+
+  .report-body{
+    padding:14px 16px 16px;
+  }
+
+  .report-summary-box{
+    margin-bottom:12px;
+    padding:10px 10px 8px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+  }
+
+  .report-summary-box h4{
+    margin:0 0 8px;
+    font-size:11px;
+    color:#f0ce8a;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+
+  .report-summary-box p{
+    margin:0;
+    color:#f5efe7;
+    font-size:12px;
+    line-height:1.6;
+    letter-spacing:-0.01em;
+  }
+
+  .report-metric-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+
+  .report-metric-row:last-child{ border-bottom:none; }
+
+  .report-metric-row span{
+    color:#d5d0c9;
+    font-size:12px;
+  }
+
+  .report-metric-row strong{
+    color:#fff7e5;
+    font-size:13px;
+    text-align:right;
+  }
+
+  .metric-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:62px;
+    padding:5px 8px;
+    border-radius:999px;
+    background:rgba(116,196,116,0.12);
+    border:1px solid rgba(116,196,116,0.3);
+    color:#9ae0a2;
+    font-size:11px;
+    font-weight:700;
+  }
+
+  .benefit-two-copy{
+    max-width:620px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin-left:0;
+    padding-left:0;
+  }
+
+  .benefit-two-copy .benefit-two-badge{
+    display:inline-block;
+    margin-bottom:18px;
+  }
+
+  .benefit-two-copy .benefit-two-title{
+    margin:0 0 18px;
+    text-align:center;
+    font-size:clamp(40px, 3.2vw, 68px);
+    line-height:1.04;
+    letter-spacing:-0.045em;
+    font-weight:800;
+    color:#fff;
+  }
+
+  .benefit-two-copy .benefit-two-desc{
+    margin:0 0 20px;
+    font-size:clamp(17px, 1.5vw, 22px);
+    color:var(--muted);
+    line-height:1.6;
+    text-align:center;
+  }
+
+  .benefit-two-copy p{
+    margin:0 0 16px;
+    font-size:clamp(18px, 1.7vw, 24px);
+    color:#f0ebe4;
+    line-height:1.6;
+    letter-spacing:-0.03em;
+    text-align:center;
+  }
+
+  .benefit-two-copy .info-box{
+    margin-top:10px;
+    padding:18px 20px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:inset 0 0 0 1px rgba(255,209,120,0.04);
+    max-width:520px;
+  }
+
+  .benefit-two-copy .info-box p{
+    margin:0;
+    font-size:18px;
+    line-height:1.7;
+    color:#d9d1c6;
+    letter-spacing:-0.02em;
+    text-align:center;
+  }
+
+  .benefit-two-copy .grad-text{ display:inline; }
+
+  .benefit-two-copy .step-text{
+    display:block;
+    margin-top:12px;
+    font-size:18px;
+    color:#c9b99d;
+    line-height:1.7;
+    text-align:center;
+  }
+
+  .benefit-two-note{
+    max-width:820px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .benefit-two-note p{
+    margin:0;
+    font-size:clamp(18px, 1.8vw, 26px);
+    line-height:1.7;
+    color:#f0ebe4;
+    letter-spacing:-0.03em;
+    text-align:center;
+  }
+
+  .benefit-two-chat {
+    width:100%;
+    max-width:480px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+  .chat-row {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:100%;
+  }
+
+  .chat-row.chat-row--right {
+    justify-content:flex-end;
+  }
+
+  .chat-avatar {
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.09);
+    border:1px solid rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#f4efe7;
+    font-size:20px;
+    flex-shrink:0;
+  }
+
+  .chat-bubble {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:56px;
+    padding:16px 22px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.06);
+    font-size:18px;
+    line-height:1.4;
+    color:#f1eee9;
+    letter-spacing:-0.02em;
+    text-align:left;
+    max-width:360px;
+  }
+
+  .chat-bubble--gold {
+    background:rgba(255,196,96,0.12);
+    border-color:rgba(255,196,96,0.22);
+    color:#f5e7c6;
+  }
+
+  .benefit-two-chat-card {
+    width:100%;
+    max-width:410px;
+    margin-top:8px;
+    padding:20px 22px;
+    border-radius:18px;
+    background:linear-gradient(135deg, rgba(197,150,78,0.92), rgba(142,108,58,0.92));
+    border:1px solid rgba(255,214,141,0.32);
+    box-shadow:0 18px 40px rgba(0,0,0,0.28);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    color:#fff9ed;
+  }
+
+  .benefit-two-chat-card strong {
+    display:block;
+    font-size:15px;
+    margin-bottom:4px;
+    color:#fff7e9;
+  }
+
+  .benefit-two-chat-card span {
+    display:block;
+    font-size:14px;
+    color:rgba(255,247,233,0.9);
+    line-height:1.4;
+  }
+
+  .benefit-two-chat-card .chat-card-icon {
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    flex-shrink:0;
+    background:rgba(0,0,0,0.08);
+  }
+
+  .benefit-two-copy .step-text strong{
+    color:#f7d698;
+    font-weight:700;
+  }
+
+  /* ===================== SECTION 6: SOCIAL PROOF ===================== */
+  .social{
+    position:relative;
+    background-color:#050403;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.22)),
+      url('./assets/online-sales-bg.png');
+    background-position:center center, center center;
+    background-repeat:no-repeat, no-repeat;
+    background-size:cover, cover;
+    background-blend-mode:normal, screen;
     border-top:1px solid rgba(255,255,255,0.08);
-    padding:56px 0 40px;
+    padding:110px 0 120px;
   }
 
   .footer-top{
@@ -558,7 +1490,8 @@
     align-items:flex-start;
     flex-wrap:wrap;
     gap:24px;
-    padding-bottom:28px;
+    padding-top:28px;
+    padding-bottom:46px;
   }
 
   .footer-logo{ height:26px; width:auto; }
@@ -583,7 +1516,8 @@
     align-items:center;
     flex-wrap:wrap;
     gap:12px;
-    padding-top:24px;
+    padding-top:34px;
+    padding-bottom:28px;
     border-top:1px solid rgba(255,255,255,0.06);
   }
 
@@ -690,6 +1624,22 @@
   @media (max-width:1100px){
     .wrap{ padding:0 30px; }
 
+    .benefit-one-inner{ padding:0 30px; }
+    .benefit-one-title{ font-size:46px; }
+    .benefit-one-desc{ font-size:18px; }
+    .ad-marquee-item{ width:220px; }
+
+    .benefit-two-content{
+      grid-template-columns: 1fr;
+      gap:40px;
+    }
+
+    .benefit-two-copy{
+      padding-left:0;
+      max-width:100%;
+      justify-self:stretch;
+    }
+
     .hero{ min-height:auto; padding-bottom:60px; }
     .hero-inner{ padding:100px 30px 320px 30px; text-align:left; }
     .hero-eyebrow{ font-size:44px; }
@@ -748,6 +1698,9 @@
     .hero-main{ font-size: 30px; margin-bottom:22px; }
     .hero-badge{ padding:16px 28px; }
     .hero-badge span{ font-size:16px; }
+    .hero-support-copy{
+      font-size: 16px;
+    }
     .hero-man{ width:90%; }
     .hero-cta-row{
       justify-content:center;
@@ -788,9 +1741,231 @@
     .meta-right{ overflow-x:visible; }
     .meta-right img{ width:100%; max-width:100%; }
 
-    .social{ padding:60px 0 80px; }
+    .benefit-one{ padding:80px 0 24px; }
+    .benefit-one-inner{ padding:0 24px; }
+    .benefit-one-title{ font-size:34px; }
+    .benefit-one-desc{ font-size:15px; }
+    .benefit-one-desc strong{ display:block; }
+    .benefit-one-desc br:nth-of-type(2){ display:block; }
+    .ad-marquee-wrap{ border-radius:0; }
+    .ad-marquee-track{ gap:12px; padding:12px 0; }
+    .ad-marquee-item{ width:170px; border-radius:12px; }
+    .ad-marquee-wrap::before,
+    .ad-marquee-wrap::after{ width:48px; }
+
+    .benefit-two{
+      padding:80px 0 100px;
+    }
+
+    .benefit-two-inner{
+      padding:0 24px;
+    }
+
+    .benefit-two-content{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:24px;
+      width:100%;
+    }
+
+    .benefit-two-panel{
+      width:100%;
+      flex:0 0 auto;
+      min-height:unset;
+    }
+
+    .phone-demo{
+      width:min(100%, 300px);
+      max-width:300px;
+      height:540px;
+      margin:0 auto;
+    }
+
+    .benefit-two-copy{
+      width:100%;
+      max-width:100%;
+      padding-left:0;
+      align-items:center;
+      text-align:center;
+    }
+
+    .benefit-two-copy .benefit-two-badge{
+      margin-bottom:12px;
+      font-size:11px;
+      padding:7px 12px;
+    }
+
+    .benefit-two-copy .benefit-two-title{
+      font-size:30px;
+      line-height:1.12;
+      margin-bottom:12px;
+      text-align:center;
+      letter-spacing:-0.04em;
+    }
+
+    .benefit-two-copy .benefit-two-desc{
+      font-size:15px;
+      margin-bottom:14px;
+      text-align:center;
+    }
+
+    .benefit-two-copy p{
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:12px;
+      text-align:center;
+    }
+
+    .benefit-two-copy .info-box{
+      max-width:100%;
+      padding:14px 14px;
+      margin-top:4px;
+    }
+
+    .benefit-two-copy .info-box p{
+      font-size:13px;
+      line-height:1.6;
+      text-align:center;
+      display:block;
+    }
+
+    .benefit-two-copy .info-box p br:nth-of-type(1),
+    .benefit-two-copy .info-box p br:nth-of-type(2),
+    .benefit-two-copy .info-box p br:nth-of-type(3) {
+      display:block;
+    }
+
+    .launch-package{
+      padding:80px 0 80px;
+    }
+
+    .launch-package-inner{
+      padding:0 24px;
+    }
+
+    .launch-package-head{
+      margin-bottom:28px;
+    }
+
+    .launch-package-badge{
+      margin-bottom:12px;
+      font-size:10px;
+      padding:7px 12px;
+    }
+
+    .launch-package-title{
+      font-size:30px;
+      line-height:1.2;
+      margin-bottom:12px;
+    }
+
+    .launch-package-sub{
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .launch-package-grid{
+      grid-template-columns:1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .launch-feature-card{
+      min-height:0;
+      padding:20px 18px;
+    }
+
+    .launch-feature-card h4{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .launch-feature-card p{
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .launch-package-cta{
+      margin-top:24px;
+      padding:18px 16px;
+    }
+
+    .launch-package-cta span{
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .benefit-two-copy .step-text{
+      font-size:14px;
+      line-height:1.6;
+      text-align:center;
+    }
+
+    .mail-alert-wrap{
+      height:70px;
+      margin-bottom:10px;
+    }
+
+    .mail-alert{
+      gap:10px;
+      padding:10px 12px;
+    }
+
+    .mail-text strong{
+      font-size:12px;
+    }
+
+    .mail-text span{
+      font-size:10px;
+    }
+
+    .report-card{
+      width:calc(100% - 20px);
+      bottom:18px;
+    }
+
+    .report-summary-box h4{
+      font-size:10px;
+    }
+
+    .report-summary-box p{
+      font-size:11px;
+    }
+
+    .report-metric-row span,
+    .report-metric-row strong{
+      font-size:11px;
+    }
+
+    .final-cta{
+      padding:100px 0 90px;
+    }
+
+    .final-cta-inner{
+      padding:0 24px;
+    }
+
+    .final-cta-title{
+      font-size:34px;
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+
+    .final-cta-sub{
+      font-size:14px;
+      margin-bottom:22px;
+    }
+
+    .cta-arrow{
+      width:50px;
+      height:50px;
+      border-width:3px;
+    }
+
+    .social{ padding:82px 0 72px; }
     .social-title{ font-size:34px; }
-    .social-desc{ font-size:14px; }
+    .social-desc{ font-size:14px; margin-bottom:32px; }
 
     .proof-collage{
       display:flex;
@@ -832,6 +2007,7 @@
     </p>
     <h2 class="hero-sub">랜딩페이지와 광고 세팅까지</h2>
     <h1 class="hero-main cream-text">온라인 영업을 한 번에</h1>
+    <p class="hero-support-copy">랜딩페이지 ｜ 광고세팅 ｜ 광고소재생성기 ｜ AI 광고 분석 에이전트 세팅</p>
     <div class="hero-cta-row">
       <a class="hero-badge" href="https://wxystudio.kr" target="_blank" rel="noopener noreferrer">
         <span class="cream-text">포트폴리오 보기</span>
@@ -901,8 +2077,7 @@
 <section class="solution">
   <div class="wrap">
     <p class="solution-title reveal">
-      그래서,<br class="mobile-break">
-      <span class="grad-text">META</span> 광고로<br>
+      <span class="grad-text">META</span>는<br>
       <span class="grad-text">필요한 고객</span>을<br class="mobile-break">
       직접 데려옵니다.
     </p>
@@ -937,10 +2112,10 @@
   <div class="wrap meta-grid">
     <div class="meta-left">
       <p class="meta-title reveal">
-        복잡한 광고 세팅<br>
-        <span class="grad-text">걱정하지 마세요!</span>
+        설계사님은<br>
+        <span class="grad-text">상담만 하세요.</span>
       </p>
-      <p class="meta-desc reveal reveal-d1">설계사님은 상담만 하세요.<br>타겟 설정부터 광고가 게시 되는거까지 도와드려요!</p>
+      <p class="meta-desc reveal reveal-d1">복잡한 광고세팅 어려우셨죠?<br>랜딩 페이지 제작부터 광고 세팅까지 다 해드립니다.</p>
     </div>
     <div class="meta-right reveal reveal-d2">
       <img src="./assets/meta-dashboard.png" alt="Meta 광고 관리자" />
@@ -948,7 +2123,209 @@
   </div>
 </section>
 
-<!-- ===================== SECTION 5: SOCIAL PROOF ===================== -->
+<!-- ===================== SECTION 4.5: BENEFIT 1 ===================== -->
+<section class="benefit-one">
+  <div class="benefit-one-inner">
+    <div class="benefit-one-header reveal">
+      <div class="benefit-one-badge">Benefit 1</div>
+      <p class="benefit-one-title">
+        광고 소재 생성기<br>
+        <span class="grad-text">평생 이용</span>
+      </p>
+      <p class="benefit-one-desc">
+        지금 제작하시면 <strong>광고 소재 생성기를 무료로 평생 이용</strong>하실 수 있어요.<br>
+        아래는 하나의 문구로 생성된<br>
+        다양한 광고소재 입니다.
+      </p>
+    </div>
+
+    <div class="ad-marquee-wrap reveal reveal-d1" aria-label="광고 소재 예시 슬라이드">
+      <div class="ad-marquee-track">
+        <div class="ad-marquee-item"><img src="./assets/ad design (1).png" alt="광고 소재 1" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (2).png" alt="광고 소재 2" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (3).png" alt="광고 소재 3" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (4).png" alt="광고 소재 4" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (5).png" alt="광고 소재 5" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (6).png" alt="광고 소재 6" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (7).png" alt="광고 소재 7" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (8).png" alt="광고 소재 8" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (9).png" alt="광고 소재 9" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (10).png" alt="광고 소재 10" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (11).png" alt="광고 소재 11" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (12).png" alt="광고 소재 12" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (13).png" alt="광고 소재 13" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (14).png" alt="광고 소재 14" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (15).png" alt="광고 소재 15" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (16).png" alt="광고 소재 16" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (17).png" alt="광고 소재 17" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (18).png" alt="광고 소재 18" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (20).png" alt="광고 소재 20" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (21).png" alt="광고 소재 21" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (22).png" alt="광고 소재 22" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (23).png" alt="광고 소재 23" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (24).png" alt="광고 소재 24" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (25).png" alt="광고 소재 25" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (26).png" alt="광고 소재 26" /></div>
+
+        <div class="ad-marquee-item"><img src="./assets/ad design (1).png" alt="광고 소재 1" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (2).png" alt="광고 소재 2" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (3).png" alt="광고 소재 3" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (4).png" alt="광고 소재 4" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (5).png" alt="광고 소재 5" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (6).png" alt="광고 소재 6" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (7).png" alt="광고 소재 7" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (8).png" alt="광고 소재 8" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (9).png" alt="광고 소재 9" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (10).png" alt="광고 소재 10" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (11).png" alt="광고 소재 11" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (12).png" alt="광고 소재 12" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (13).png" alt="광고 소재 13" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (14).png" alt="광고 소재 14" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (15).png" alt="광고 소재 15" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (16).png" alt="광고 소재 16" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (17).png" alt="광고 소재 17" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (18).png" alt="광고 소재 18" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (20).png" alt="광고 소재 20" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (21).png" alt="광고 소재 21" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (22).png" alt="광고 소재 22" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (23).png" alt="광고 소재 23" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (24).png" alt="광고 소재 24" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (25).png" alt="광고 소재 25" /></div>
+        <div class="ad-marquee-item"><img src="./assets/ad design (26).png" alt="광고 소재 26" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5.5: BENEFIT 2 ===================== -->
+<section class="benefit-two">
+  <div class="benefit-two-inner">
+    <div class="benefit-two-content reveal reveal-d2">
+      <div class="benefit-two-panel benefit-two-panel--main">
+        <div class="phone-demo" aria-label="광고 성과 알림과 리포트 예시">
+          <div class="phone-screen">
+            <div class="mail-topbar">
+              <div class="mail-dot-group">
+                <span class="mail-dot"></span>
+                <span class="mail-dot"></span>
+                <span class="mail-dot"></span>
+              </div>
+              <span>9:41</span>
+            </div>
+
+            <div class="mail-body">
+              <div class="mail-alert-wrap">
+                <button class="mail-alert" type="button" aria-label="광고 성과 보고서 열기">
+                  <div class="mail-bell"></div>
+                  <div class="mail-text">
+                    <strong>광고 성과 보고서</strong>
+                    <span>오늘 11:45 · AI 분석 완료</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="report-card">
+              <div class="report-header">
+                <span class="report-label">광고 요약</span>
+                <span class="report-score">주의</span>
+              </div>
+              <div class="report-body">
+                <div class="report-summary-box">
+                  <h4>한 줄 설명</h4>
+                  <p>랜딩페이지 방문자는 유지되고 있지만 상담 신청으로 이어지는 비율이 이전보다 낮아졌습니다.</p>
+                </div>
+
+                <div class="report-metric-row">
+                  <span>체류율</span>
+                  <strong>82.4%</strong>
+                </div>
+                <div class="report-metric-row">
+                  <span>상담 전환율</span>
+                  <strong>2.1%</strong>
+                </div>
+                <div class="report-metric-row">
+                  <span>전환 변화</span>
+                  <strong>-18.6%</strong>
+                </div>
+                <div class="report-summary-box">
+                  <h4>권장 점검</h4>
+                  <p>방문자가 상담 단계에서 이탈하고 있을 가능성이 있으므로, CTA 버튼의 문구와 위치, 상담폼까지의 동선, 입력 항목 수 등 전환을 방해하는 요소가 있는지 점검하는 것을 권장합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefit-two-panel benefit-two-panel--sub">
+        <div class="benefit-two-copy">
+          <div class="benefit-two-badge">Benefit 2</div>
+          <p class="benefit-two-title">
+            <span class="grad-text">AI 광고 성과 분석 에이전트 세팅</span>
+          </p>
+          <p class="benefit-two-desc">
+            AI 에이전트가 분석한 광고 성과를 매일 밤 메일로 받아보세요.
+          </p>
+          <div class="info-box">
+            <p>
+              광고가 잘 나가고 있는지,<br>
+              어디에서 상담으로 이어지지 않는지<br>
+              설계사님이 바로 이해할 수 있게 보고됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5.75: LAUNCH PACKAGE ===================== -->
+<section class="launch-package">
+  <div class="launch-package-inner">
+    <div class="launch-package-head reveal">
+      <div class="launch-package-badge">Launch Package</div>
+      <h3 class="launch-package-title">
+        <span class="grad-text">온라인 영업</span> 풀 패키지
+      </h3>
+      <p class="launch-package-sub">
+        랜딩페이지 + 광고소재생성기 + 광고세팅 + AI 광고 성과 분석 에이전트
+      </p>
+    </div>
+
+    <div class="launch-package-grid">
+      <div class="launch-feature-card reveal reveal-d1">
+        <div class="launch-feature-icon">01</div>
+        <h4>랜딩페이지</h4>
+        <p>설계사님이 상담으로 이어지기 쉬운 구조의 랜딩페이지를 제작해드립니다.</p>
+      </div>
+
+      <div class="launch-feature-card reveal reveal-d2">
+        <div class="launch-feature-icon">02</div>
+        <h4>광고 소재 생성기</h4>
+        <p>소재에 사용될 문구만 작성하면 <br>다양한 시안이 나오는 생성기를<br> 평생 이용하실 수 있습니다.</p>
+      </div>
+
+      <div class="launch-feature-card reveal reveal-d3">
+        <div class="launch-feature-icon">03</div>
+        <h4>광고세팅</h4>
+        <p>광고 타깃, 캠페인 구조, 랜딩페이지 연결까지 한 번에 설계해 빠르게 세팅합니다.</p>
+      </div>
+
+      <div class="launch-feature-card reveal reveal-d4">
+        <div class="launch-feature-icon">04</div>
+        <h4>AI 광고 분석 에이전트</h4>
+        <p>매일 성과를 분석해 어떤 부분을 개선해야 하는지, 바로 이해할 수 있게 보고드립니다.</p>
+      </div>
+    </div>
+
+    <div class="launch-package-cta reveal reveal-d2">
+      <span>한 번의 런칭으로 광고와 상담 흐름을 동시에 연결해드립니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6: SOCIAL PROOF ===================== -->
 <section class="social">
   <div class="wrap">
     <p class="social-title reveal">
@@ -966,6 +2343,15 @@
   </div>
 </section>
 
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta">
+  <div class="final-cta-inner reveal">
+    <h3 class="final-cta-title">지금 바로 상담 신청하세요.</h3>
+    <p class="final-cta-sub">랜딩페이지부터 광고 운영까지 한 번에 준비해드립니다.</p>
+    <div class="cta-arrow" aria-hidden="true"></div>
+  </div>
+</section>
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="wrap footer-inner">
@@ -976,7 +2362,6 @@
       </div>
       <div class="footer-info">
         <p>사업자등록번호 719-38-01431</p>
-        <p>wxyshop20250701@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1021,6 +2406,36 @@
       });
     }, { threshold: 0.2 });
     els.forEach(function (el) { io.observe(el); });
+
+    var phoneDemo = document.querySelector('.phone-demo');
+    if (phoneDemo) {
+      function openPhoneReport() {
+        phoneDemo.classList.add('is-open');
+      }
+
+      function closePhoneReport() {
+        phoneDemo.classList.remove('is-open');
+      }
+
+      function runPhoneLoop() {
+        closePhoneReport();
+        setTimeout(function () {
+          openPhoneReport();
+          setTimeout(function () {
+            closePhoneReport();
+            setTimeout(runPhoneLoop, 2000);
+          }, 3000);
+        }, 2000);
+      }
+
+      setTimeout(runPhoneLoop, 2000);
+
+      phoneDemo.addEventListener('click', function (event) {
+        if (event.target.closest('.mail-alert')) {
+          openPhoneReport();
+        }
+      });
+    }
 
     var leadForm = document.getElementById('lead-form');
     var successMsg = document.getElementById('lead-form-success');
